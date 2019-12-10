@@ -1,0 +1,92 @@
+product:
+  -
+    name: Свитер в полоску
+    url: pullover.png
+    alt: pullover
+    data: 5
+    title: Новинка
+    badge: badge-info
+  -
+    name: Платье с цветочным принтом
+    url: dress.png
+    alt: dress
+    data: 4
+    title: Хит продаж
+    badge: badge-warning text-white
+  -
+    name: Джинсовый комбинезон
+    url: overalls.png
+    alt: overalls
+    data: 5
+
+filter-material:
+   category:
+     -
+       name: Категория
+       id: categoryCollapse
+       list:
+          -
+            name: Все
+            active: active
+          -
+            name: 100% хлопок
+          -
+            name: Трикотаж
+          -
+            name: Шерсть
+          -
+            name: Джинсовый
+          -
+            name: Составной
+   size:
+     -
+       name: Размер
+       id: ziseCollapse
+       list:
+          -
+            number: 56
+          -
+            number: 46
+          -
+            number: 12
+          -
+            number: 79
+          -
+            number: 41
+          -
+            number: 5
+   color:
+     -
+       name: Цвет
+       id: colorCollapse
+       list:
+          -
+            name: Синий
+          -
+            name: Красный
+          -
+            name: Зеленый
+          -
+            name: Серый
+          -
+            name: Джинсовый
+          -
+            name: Чорный
+   material:
+     -
+       name: Материал
+       id: materialCollapse
+       list:
+          -
+            name: Все
+            active: active
+          -
+            name: 100% хлопок
+          -
+            name: Трикотаж
+          -
+            name: Шерсть
+          -
+            name: Джинсовый
+          -
+            name: Составной

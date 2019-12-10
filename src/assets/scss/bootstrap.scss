@@ -1,0 +1,28 @@
+// bootstrap.scss
+// Option B: Include parts of Bootstrap
+
+@charset "utf-8";
+
+@import "settings";
+@import "~bootstrap/scss/bootstrap";
+
+.section {
+  &.section__product {
+    .simplebar-offset {
+      @extend .px-4;
+    }
+
+    .simplebar-vertical {
+      @extend .mx-3;
+    }
+    .slick-list{
+      @extend .pb-4;
+    }
+   /* .select2-selection {
+      @extend .form-control
+    }
+    .select2-selection--multiple{
+      @extend .form-control-sm
+    }*/
+  }
+}

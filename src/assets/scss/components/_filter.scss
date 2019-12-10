@@ -1,0 +1,126 @@
+
+.section {
+  &.section__product {
+    .nav {
+      .simple-bar {
+        &__item {
+          a {
+            color: $dark;
+          }
+
+          .active {
+            color: $info;
+          }
+        }
+      }
+
+      .simplebar-track.simplebar-vertical {
+        width: rem-calc(3px);
+      }
+
+      .simplebar-scrollbar:before {
+        background: $info;
+      }
+    }
+
+    .dropdown-toggle {
+      &:after {
+        font-family: "Font Awesome 5 Free";
+      }
+
+      &[data-toggle=collapse] {
+        &[aria-expanded=true] {
+          &::after {
+            transform: rotate(-180deg);
+          }
+        }
+      }
+
+      &[aria-expanded=true] {
+        &::after {
+          transition: all .5s ease-in-out;
+          transform-origin: center center;
+        }
+      }
+
+      &[aria-expanded=false] {
+        &::after {
+          transition: all .5s ease-in-out;
+          transform-origin: center center;
+        }
+      }
+
+      &::after {
+        vertical-align: 0.255em;
+        content: "\f107";
+        border: none;
+        display: inline-block;
+        text-align: right;
+        position: absolute;
+        font-size: rem-calc(14px);
+        right: 10%;
+        color: #c4c4c4;
+      }
+    }
+
+    .select2-container--default {
+      &.select2-container--open {
+        .select2-selection--single {
+          b{
+            &::after{
+              transition: all .5s ease-in-out;
+              transform-origin: center center;
+            }
+          }
+          .select2-selection__arrow {
+            b {
+              &::after {
+                transform: rotate(-180deg);
+              }
+            }
+          }
+
+        }
+      }
+
+      .select2-selection--single {
+        b{
+          &::after{
+            transition: all .5s ease-in-out;
+            transform-origin: center center;
+          }
+        }
+        .select2-selection__arrow {
+          b {
+            border-color: transparent;
+            border: none;
+            height: 0;
+            left: 50%;
+            margin: 0;
+            &::after {
+              font-family: "Font Awesome 5 Free";
+              vertical-align: 0.255em;
+              line-height: .05;
+              content: "\f107";
+              border: none;
+              display: inline-block;
+              text-align: right;
+              position: absolute;
+              font-size: rem-calc(14px);
+              right: 10%;
+              color: #c4c4c4;
+            }
+          }
+        }
+
+      }
+    }
+
+    .select2-container--default .select2-selection--multiple .select2-selection__choice {
+      background-color: transparent;
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

@@ -1,0 +1,309 @@
+<section class="section section__product py-5">
+    <div class="container-fluid container-lg640">
+        <div class="section__title">
+            <h2 class="h2">Одежда для девочек</h2>
+        </div>
+        <div class="row flex-column flex-md-row">
+            <div class="col-12 col-md-4 col-lg-3 mb-5">
+
+                <form class="border mb-10 mb-md-0">
+                    <ul id="filterNav" class="nav nav-filter nav-vertical font-arial font-weight-bold text-dark">
+                        <!--Category-->
+                        {{#each tsconfig.filter-material.category}}
+                        <li class="nav-item w-100">
+
+                            <!-- Toggle -->
+                            <a class="nav-link dropdown-toggle font-size-lg text-reset border-bottom mb-6 collapsed"
+                               data-toggle="collapse" href="#{{id}}" aria-expanded="false">
+                                {{name}}
+                            </a>
+
+                            <!-- Collapse -->
+                            <div class="collapse" id="{{id}}" style="">
+                                <div class="form-group">
+                                    <ul id="categoryNav" class="simple-bar list-unstyled mb-0 pt-2" data-simplebar
+                                        style="max-height: 155px">
+                                        {{#each list}}
+                                        <li class="simple-bar__item list-styled-item">
+                                            <a class="list-styled-link text-decoration-none {{active}}" href="#">
+                                                {{name}}
+                                            </a>
+                                        </li>
+                                        {{/each}}
+                                        {{#each list}}
+                                        <li class="simple-bar__item list-styled-item">
+                                            <a class="list-styled-link text-decoration-none" href="#">
+                                                {{name}}
+                                            </a>
+                                        </li>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </li>
+                        {{/each}}
+                        <!--Size-->
+                        {{#each tsconfig.filter-material.size}}
+                        <li class="nav-item w-100">
+
+                            <!-- Toggle -->
+                            <a class="nav-link font-size-lg text-reset border-bottom mb-6"
+                               href="#{{id}}">
+                                <span class="d-flex flex-row justify-content-between">
+                                   {{name}}
+                                    <!--Select-->
+                                    <select class="js-example-basic-single" name="state">
+                                        {{#each list}}
+                                        <option value="{{number}}">
+                                            {{number}}
+                                        </option>
+                                        {{/each}}
+                                    </select>
+                                </span>
+                            </a>
+                        </li>
+                        {{/each}}
+                        <!--Color-->
+                        {{#each tsconfig.filter-material.color}}
+                        <li class="nav-item w-100">
+
+                            <!-- Toggle -->
+                            <a class="nav-link font-size-lg text-reset border-bottom"
+                               href="#{{id}}">
+                                <span class="d-flex flex-row justify-content-between align-items-center">
+                                   {{name}}
+                                    <!--Select-->
+                                    <select class="js-example-basic-multiple" name="states[]" multiple="multiple">
+                                        {{#each list}}
+                                        <option value="{{name}}">
+                                            {{name}}
+                                        </option>
+                                        {{/each}}
+                                    </select>
+                                </span>
+                            </a>
+                        </li>
+                        {{/each}}
+                        <!--Material-->
+                        {{#each tsconfig.filter-material.material}}
+                        <li class="nav-item w-100">
+
+                            <!-- Toggle -->
+                            <a class="nav-link dropdown-toggle font-size-lg text-reset border-bottom mb-6 collapsed"
+                               data-toggle="collapse" href="#{{id}}" aria-expanded="false">
+                                {{name}}
+                            </a>
+
+                            <!-- Collapse -->
+                            <div class="collapse" id="{{id}}" style="">
+                                <div class="form-group">
+                                    <ul id="materialNav" class="simple-bar list-unstyled mb-0 pt-2" data-simplebar
+                                        style="max-height: 155px">
+                                        {{#each list}}
+                                        <li class="simple-bar__item list-styled-item">
+                                            <a class="list-styled-link text-decoration-none {{active}}" href="#">
+                                                {{name}}
+                                            </a>
+                                        </li>
+                                        {{/each}}
+                                        {{#each list}}
+                                        <li class="simple-bar__item list-styled-item">
+                                            <a class="list-styled-link text-decoration-none" href="#">
+                                                {{name}}
+                                            </a>
+                                        </li>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </li>
+                        {{/each}}
+                    </ul>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-link font-arial text-info">Применить фильтр</button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-12 col-md-8 col-lg-9">
+                <div class="slider">
+                    <div class="slider__nav">
+                        <div class="container">
+                            <div class="row pb-md-3 position-relative">
+                                {{#each tsconfig.product}}
+                                <div class="col-6 col-md-4 mb-5 align-self-stretch">
+                                    <div class="card h-100 shadow-sm">
+                                        <img src="./assets/img/{{url}}" class="img-fluid card-img-top" alt="{{alt}}"
+                                             style="max-height: 197px">
+                                        <div class="card-body p-0 p-sm-2">
+                                            <span class="badge {{badge}} p-2 text-uppercase position-absolute fonts-semi-bold">{{title}}</span>
+                                            <div class="d-flex flex-column justify-content-end">
+                                                <ul class="list-unstyled list-inline text-center text-warning"
+                                                    data-value="{{data}}">
+                                                    {{#repeat 5}}
+                                                    <li class="list-inline-item list-inline-item__rating">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    {{/repeat}}
+                                                </ul>
+                                                <a href="#" class="stretched-link  text-dark text-decoration-none">
+                                                    <h6 class="card-title text-center position-relative line-title line-title_center pb-4">
+                                                        {{name}}</h6></a>
+                                                <p class="text-center font-weight-bold mb-0">123 грн</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{/each}}
+                                <div class="section__category-title position-absolute">
+                                    <h5>Похожые товары</h5>
+                                </div>
+                                {{#each tsconfig.product}}
+                                <div class="col-6 col-md-4 mb-5  align-self-stretch">
+                                    <div class="card h-100 shadow-sm">
+                                        <img src="./assets/img/{{url}}" class="img-fluid card-img-top" alt="{{alt}}"
+                                             style="max-height: 197px">
+                                        <div class="card-body p-0 p-sm-2">
+                                            <span class="badge {{badge}} p-2 text-uppercase position-absolute fonts-semi-bold">{{title}}</span>
+                                            <div class="d-flex flex-column justify-content-end">
+                                                <ul class="list-unstyled list-inline text-center text-warning"
+                                                    data-value="{{data}}">
+                                                    {{#repeat 5}}
+                                                    <li class="list-inline-item list-inline-item__rating">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    {{/repeat}}
+                                                </ul>
+                                                <a href="#" class="stretched-link  text-dark text-decoration-none">
+                                                    <h6 class="card-title text-center position-relative line-title line-title_center pb-4">
+                                                        {{name}}</h6></a>
+                                                <p class="text-center font-weight-bold mb-0">123 грн</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{/each}}
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row pb-md-3 position-relative">
+                                {{#each tsconfig.product}}
+                                <div class="col-6 col-md-4 mb-5 align-self-stretch">
+                                    <div class="card h-100 shadow-sm">
+                                        <img src="./assets/img/{{url}}" class="img-fluid card-img-top" alt="{{alt}}"
+                                             style="max-height: 197px">
+                                        <div class="card-body p-0 p-sm-2">
+                                            <span class="badge {{badge}} p-2 text-uppercase position-absolute fonts-semi-bold">{{title}}</span>
+                                            <div class="d-flex flex-column justify-content-end">
+                                                <ul class="list-unstyled list-inline text-center text-warning"
+                                                    data-value="{{data}}">
+                                                    {{#repeat 5}}
+                                                    <li class="list-inline-item list-inline-item__rating">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    {{/repeat}}
+                                                </ul>
+                                                <a href="#" class="stretched-link  text-dark text-decoration-none">
+                                                    <h6 class="card-title text-center position-relative line-title line-title_center pb-4">
+                                                        {{name}}</h6></a>
+                                                <p class="text-center font-weight-bold mb-0">123 грн</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{/each}}
+                                <div class="section__category-title position-absolute">
+                                    <h5>Похожые товары</h5>
+                                </div>
+                                {{#each tsconfig.product}}
+                                <div class="col-6 col-md-4 mb-5  align-self-stretch">
+                                    <div class="card h-100 shadow-sm">
+                                        <img src="./assets/img/{{url}}" class="img-fluid card-img-top" alt="{{alt}}"
+                                             style="max-height: 197px">
+                                        <div class="card-body p-0 p-sm-2">
+                                            <span class="badge {{badge}} p-2 text-uppercase position-absolute fonts-semi-bold">{{title}}</span>
+                                            <div class="d-flex flex-column justify-content-end">
+                                                <ul class="list-unstyled list-inline text-center text-warning"
+                                                    data-value="{{data}}">
+                                                    {{#repeat 5}}
+                                                    <li class="list-inline-item list-inline-item__rating">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    {{/repeat}}
+                                                </ul>
+                                                <a href="#" class="stretched-link  text-dark text-decoration-none">
+                                                    <h6 class="card-title text-center position-relative line-title line-title_center pb-4">
+                                                        {{name}}</h6></a>
+                                                <p class="text-center font-weight-bold mb-0">123 грн</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{/each}}
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row pb-md-3 position-relative">
+                                {{#each tsconfig.product}}
+                                <div class="col-6 col-md-4 mb-5 align-self-stretch">
+                                    <div class="card h-100 shadow-sm">
+                                        <img src="./assets/img/{{url}}" class="img-fluid card-img-top" alt="{{alt}}"
+                                             style="max-height: 197px">
+                                        <div class="card-body p-0 p-sm-2">
+                                            <span class="badge {{badge}} p-2 text-uppercase position-absolute fonts-semi-bold">{{title}}</span>
+                                            <div class="d-flex flex-column justify-content-end">
+                                                <ul class="list-unstyled list-inline text-center text-warning"
+                                                    data-value="{{data}}">
+                                                    {{#repeat 5}}
+                                                    <li class="list-inline-item list-inline-item__rating">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    {{/repeat}}
+                                                </ul>
+                                                <a href="#" class="stretched-link  text-dark text-decoration-none">
+                                                    <h6 class="card-title text-center position-relative line-title line-title_center pb-4">
+                                                        {{name}}</h6></a>
+                                                <p class="text-center font-weight-bold mb-0">123 грн</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{/each}}
+                                <div class="section__category-title position-absolute">
+                                    <h5>Похожые товары</h5>
+                                </div>
+                                {{#each tsconfig.product}}
+                                <div class="col-6 col-md-4 mb-5  align-self-stretch">
+                                    <div class="card h-100 shadow-sm">
+                                        <img src="./assets/img/{{url}}" class="img-fluid card-img-top" alt="{{alt}}"
+                                             style="max-height: 197px">
+                                        <div class="card-body p-0 p-sm-2">
+                                            <span class="badge {{badge}} p-2 text-uppercase position-absolute fonts-semi-bold">{{title}}</span>
+                                            <div class="d-flex flex-column justify-content-end">
+                                                <ul class="list-unstyled list-inline text-center text-warning"
+                                                    data-value="{{data}}">
+                                                    {{#repeat 5}}
+                                                    <li class="list-inline-item list-inline-item__rating">
+                                                        <i class="fas fa-star"></i>
+                                                    </li>
+                                                    {{/repeat}}
+                                                </ul>
+                                                <a href="#" class="stretched-link  text-dark text-decoration-none">
+                                                    <h6 class="card-title text-center position-relative line-title line-title_center pb-4">
+                                                        {{name}}</h6></a>
+                                                <p class="text-center font-weight-bold mb-0">123 грн</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

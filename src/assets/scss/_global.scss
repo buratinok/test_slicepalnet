@@ -1,0 +1,40 @@
+
+body, .body {
+  @include fonts(15px)
+}
+
+.line-title {
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 15%;
+    height: 2px;
+    background-color: $secondary;
+  }
+}
+
+.line-title_center {
+  &::before {
+    width: 45%;
+    right: 50%;
+    transform: translate(50%, 50%);
+  }
+}
+
+.fonts-semi-bold {
+  font-weight: $semi-bold;
+}
+
+.font-arial {
+  @include fonts(13px, 24px, $font-family-arial);
+}
+
+@include media-breakpoint-down(xs) {
+  body, .body {
+    @include fonts(10px)
+  }
+  .h6, h6 {
+    font-size: 1em;
+  }
+}
